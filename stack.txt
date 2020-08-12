@@ -1,0 +1,70 @@
+import java.util.*;
+public class stack {
+	static int top=-1;
+	static String[] arr=new String[5];
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s=new Scanner(System.in);
+		int ch=0;
+		do
+		{
+			System.out.println("1.Push\n2.pop\n3.peak\nEnter your choice:");
+			int c=s.nextInt();
+			switch(c)
+			{
+			case 1:System.out.println("Enter string to enter:");
+			String str=s.next();
+			push(str);
+			break;
+			case 2:pop();
+			break;
+			case 3: peek();
+			break;
+			
+			}
+			System.out.println("Do ypu want to continue(1/0)");
+			ch=s.nextInt();
+		}while(ch==1);
+		
+		
+
+	}
+	public static void push(String str)
+	{
+		
+		if(top>=arr.length-1)
+		{
+			System.out.println("Stack Overflow");
+		}
+		else{
+			arr[++top]=str;
+			
+		}
+	}
+	public static void pop()
+	{
+		if(top>0)
+		{
+			String st=arr[top--];
+			System.out.println("Poped String: "+st);
+		}
+		else{
+			System.out.println("Stack Underflow");
+		}
+	}
+	public static void peek()
+	{
+		if(top>0)
+		{
+			String st=arr[top];
+			System.out.println("String at top: "+st);
+		}
+		else{
+			System.out.println("Stack Underflow");
+		}
+	}
+	
+	
+
+}
