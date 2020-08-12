@@ -1,0 +1,19 @@
+Queue using array
+data member: int front, rear, capacity
+			 int[] queue=new int[capacity];
+			 
+Methods:Enqueue
+		- Check if the queue is full
+		if(rear==capacity)
+		-if not
+			insert element at rear position and increamenr rear
+			queue[rear]=data;
+			rear++;
+			
+		Dequeue:
+		-Check if queue is empty
+		if(front==rear)
+		-if not
+			shift the elements to right by 1 and decreament rear
+			queue[i]=queue[i+1]
+			rear--;
