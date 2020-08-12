@@ -1,0 +1,21 @@
+Array - Random access
+		static memory allocation
+		Use Integer Index to get data
+		Can be used to store books details in library
+		
+LinkedList - Sequntial access
+			dynamic memory allocation
+			Pointers are used to access data
+			example - Can be used to implement queues
+			
+Queue - Sequntial access
+		Dynamic memory allocation
+		First In First Out
+		example - IO requests
+		
+		
+Stack - Sequntial access
+		static memory allocation
+		Last In First Out
+		example - Undo/Redo
+		
