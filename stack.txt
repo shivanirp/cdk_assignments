@@ -23,7 +23,7 @@ public class stack {
 			break;
 			
 			}
-			System.out.println("Do ypu want to continue(1/0)");
+			System.out.println("Do ypu want to continue(yes=1/no=0)");
 			ch=s.nextInt();
 		}while(ch==1);
 		
