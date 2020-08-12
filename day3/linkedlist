@@ -1,0 +1,23 @@
+LinkedList
+
+A->B->C->D->
+
+Add last: Traverse linkedList till the last and add the element
+			ptr=ptr.next
+			
+			ptr.data=new_data;
+			
+Add first:  ptr.data=new_data;
+			ptr.next=head;
+			head=ptr;
+			
+Add E after B: p.data=E;
+			Traverse list till ptr.data=B;
+			p.next=ptr.next;
+			ptr.next=p;
+				
+Remove by index: traverse the list till count == index
+				prev=ptr;
+				ptr=ptr.next;
+				
+				prev.next=ptr.next;
