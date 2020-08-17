@@ -28,10 +28,10 @@ function add()
 	e.email = document.getElementById("email").value;
 	emp.push(e);
 	console.log(e);
-	addition();
+	display_table(e);
 }
 
-function addition()
+function display_table(e)
 {
 	
 	var table = document.getElementById("mytbl");
@@ -40,10 +40,11 @@ function addition()
 	var cell2 = row.insertCell(1);
 	var cell3 = row.insertCell(2);
 	var cell4 = row.insertCell(3);
-	cell1.innerHTML = document.getElementById("empno").value;
-	cell2.innerHTML = document.getElementById("ename").value;
-	cell3.innerHTML = document.getElementById("salary").value;
-	cell4.innerHTML = document.getElementById("email").value;
+	cell1.innerHTML = e.empno;
+	cell2.innerHTML = e.ename;
+	cell3.innerHTML = e.salary;
+	cell4.innerHTML = e.email;
+	
 
 	document.getElementById("empno").value=null;
 	document.getElementById("ename").value=null;
