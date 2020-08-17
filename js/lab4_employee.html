@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+var emp=new Array()
+function Emp(empno, ename, salary, email){
+		this.empno=empno;
+		this.ename=ename;
+		this.salary=salary;
+		this.email=email;		
+}
+
+function add()
+{
+	var e= new Emp()
+	e.empno= document.getElementById("empno").value;
+	e.ename = document.getElementById("ename").value;
+	e.salary = document.getElementById("salary").value;
+	e.email = document.getElementById("email").value;
+	emp.push(e);
+	console.log(e);
+	addition();
+}
+
+function addition()
+{
+	
+	var table = document.getElementById("mytbl");
+	var row = table.insertRow(-1);
+	var cell1 = row.insertCell(0);
+	var cell2 = row.insertCell(1);
+	var cell3 = row.insertCell(2);
+	var cell4 = row.insertCell(3);
+	cell1.innerHTML = document.getElementById("empno").value;
+	cell2.innerHTML = document.getElementById("ename").value;
+	cell3.innerHTML = document.getElementById("salary").value;
+	cell4.innerHTML = document.getElementById("email").value;
+
+	document.getElementById("empno").value=null;
+	document.getElementById("ename").value=null;
+	document.getElementById("salary").value=null;
+	document.getElementById("email").value=null;
+
+}
+/*
+function validate(str)
+{
+	var str= document.getElementById("email").value
+	var x=str.indexOf("@");
+	var y=str.lastIndexOf(".")
+	console.log(x + "  "+ y)
+	if(y<x || x<0 || y<0)
+		{
+		return false;
+		}
+	else
+		return true;
+}*/
+
+</script>
+</head>
+<body >
+Empno: <input type="number" id="empno" name="empno"><br>
+Ename: <input type="text" id="ename" name="ename"><br>
+Salary: <input type="number" id="salary" name="salary"><br>
+Email: <input type="email" id="email" name="email"><br><br>
+<input type="button" value="Add"  onclick="add()"><br><br>
+
+<table border="1" id="mytbl" >
+<tr>
+<th>Empno</th>
+<th>Name</th>
+<th>salary</th>
+<th>email</th>
+</tr>
+</table>
+</body>
+</html>
