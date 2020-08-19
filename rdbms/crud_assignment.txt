@@ -1,0 +1,73 @@
+create table person (personId number(10),pname varchar(20), city varchar(102), state varchar(20),dob date,aadharNo number(12), constraint  pk_personId primary key (personId));
+
+
+insert into person values(1,'Reva','Hyderabad','Punjab',to_date('17-11-1981','dd-mm-yyyy'),420345872103);
+insert into person values(2,'Vanita','Mumbai','Maharasthra',to_date('7-1-1997','dd-mm-yyyy'),420368412039);
+insert into person values(3,'Aashu','Pune','Maharasthra',to_date('23-06-1995','dd-mm-yyyy'),420234785126);
+insert into person values(4,'Trupti','Noida','Punjab',to_date('17-09-1988','dd-mm-yyyy'),420385697845);
+insert into person values(5,'Anusha','Pune','Punjab',to_date('05-03-1992','dd-mm-yyyy'),420336874512);
+insert into person values(6,'Sarika','Bangalore','Karnataka',to_date('01-05-1989','dd-mm-yyyy'),420387451203);
+insert into person values(7,'Rutu','Nagpur','Maharashtra',to_date('07-02-1983','dd-mm-yyyy'),420374512306);
+insert into person values(8,'Gargi','Mumbai','Maharashtra',to_date('17-06-2000','dd-mm-yyyy'),420301452367);
+
+select * from person;
+
+PERSONID	PNAME	  CITY		  STATE		    DOB			  AADHARNO
+1			    Reva	  Hyderabad	Punjab		  17-NOV-81	420345872103
+2			    Vanita	Mumbai		Maharasthra	07-JAN-97	420368412039
+3			    Aashu	  Pune		  Maharasthra	23-JUN-95	420234785126
+4			    Trupti	Noida		  Punjab		  17-SEP-88	420385697845
+5			    Anusha	Pune		  Punjab		  05-MAR-92	420336874512
+6			    Sarika	Bangalore	Karnataka	  01-MAY-89	420387451203
+7			    Rutu	  Nagpur		Maharashtra	07-FEB-83	420374512306
+8			    Gargi	  Mumbai		Maharashtra	17-JUN-00	420301452367
+
+
+update person set pname='Sheela',city='Pune',state='Maharashtra',dob=to_date('27-07-1988','dd-mm-yyyy'),aadharNo=499852263771 where personId=6;
+
+PERSONID	PNAME	  CITY		  STATE		    DOB			  AADHARNO
+1			    Reva	  Hyderabad	Punjab		  17-NOV-81	420345872103
+2			    Vanita	Mumbai		Maharasthra	07-JAN-97	420368412039
+3			    Aashu	  Pune		  Maharasthra	23-JUN-95	420234785126
+4			    Trupti	Noida		  Punjab		  17-SEP-88	420385697845
+5			    Anusha	Pune		  Punjab		  05-MAR-92	420336874512
+6			    Sheela	Pune		  Maharashtra	27-JUL-88	499852263771
+7			    Rutu	  Nagpur		Maharashtra	07-FEB-83	420374512306
+8			    Gargi	  Mumbai		Maharashtra	17-JUN-00	420301452367
+
+update person set city='Hyderabad',state='Telangana' where state='Punjab';
+
+
+PERSONID	PNAME   CITY		  STATE		    DOB			  AADHARNO
+1			    Reva	  Hyderabad	Telangana	  17-NOV-81	420345872103
+2			    Vanita	Mumbai		Maharasthra	07-JAN-97	420368412039
+3			    Aashu	  Pune		  Maharasthra	23-JUN-95	420234785126
+4			    Trupti	Hyderabad	Telangana	  17-SEP-88	420385697845
+5			    Anusha	Hyderabad	Telangana	  05-MAR-92	420336874512
+6			    Sheela	Pune		  Maharashtra	27-JUL-88	499852263771
+7			    Rutu	  Nagpur		Maharashtra	07-FEB-83	420374512306
+8			    Gargi	  Mumbai		Maharashtra	17-JUN-00	420301452367
+
+delete from person where personId=2;
+select * from person;
+
+PERSONID	PNAME	  CITY		   STATE		  DOB			  AADHARNO
+1			    Reva	  Hyderabad	Telangana	  17-NOV-81	420345872103
+3			    Aashu	  Pune		  Maharasthra	23-JUN-95	420234785126
+4			    Trupti	Hyderabad	Telangana	  17-SEP-88	420385697845
+5			    Anusha	Hyderabad	Telangana	  05-MAR-92	420336874512
+6			    Sheela	Pune		  Maharashtra	27-JUL-88	499852263771
+7			    Rutu	  Nagpur		Maharashtra	07-FEB-83	420374512306
+8			    Gargi	  Mumbai		Maharashtra	17-JUN-00	420301452367
+
+
+delete from person where city='Pune';
+select * from person;
+
+PERSONID	PNAME	  CITY		  STATE		    DOB		  	AADHARNO
+1			    Reva	  Hyderabad	Telangana	  17-NOV-81	420345872103
+4			    Trupti	Hyderabad	Telangana	  17-SEP-88	420385697845
+5			    Anusha	Hyderabad	Telangana	  05-MAR-92	420336874512
+7			    Rutu    Nagpur		Maharashtra	07-FEB-83	420374512306
+8			    Gargi	  Mumbai		Maharashtra	17-JUN-00	420301452367
+
