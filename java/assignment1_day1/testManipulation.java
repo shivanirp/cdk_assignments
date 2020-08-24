@@ -9,7 +9,6 @@ public class testManipulation {
 		for(student s : stud)
 		{
 			s.display();
-			System.out.println("Total marks : "+s.getTotal()+"\n");
 		}
 		student x=stmn.findTop(stud);
 		System.out.println("\nTopper:");
