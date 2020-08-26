@@ -1,6 +1,6 @@
 package ShapeAssignment;
 
-public class TestShape {
+public class TestCalculatable {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -17,6 +17,7 @@ public class TestShape {
 		System.out.println("\nArea of Square : "+c3.area());
 		System.out.println("Perimeter of Square : "+c3.perimeter());
 		
+
 	}
 
 }
