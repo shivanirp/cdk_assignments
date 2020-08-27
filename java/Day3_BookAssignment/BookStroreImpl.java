@@ -97,20 +97,12 @@ public class BookStoreImpl implements BookStore {
 	@Override
 	public Book updateBook(Book[] books, long Id, double price) {
 		// TODO Auto-generated method stub
-
-		for(Book b : books)
+		
+		Book b=findBookById(books, Id);
+		if(b!=null)
 		{
-			if(b.getISBN()==Id)
-			{
-				b.setPrice(price);
-				return b;
-			}
-		}
-		try{
-			throw new BookNotFoundException("Book not Found....");
-		}
-		catch (BookNotFoundException e) {
-			e.printStackTrace();
+			b.setPrice(price);
+			return b;
 		}
 		return null;
 	}
