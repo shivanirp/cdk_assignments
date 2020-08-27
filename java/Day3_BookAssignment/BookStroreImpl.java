@@ -64,13 +64,12 @@ public class BookStoreImpl implements BookStore {
 				return b;
 			}
 		}
-			try{
-				throw new BookNotFoundException("Book not Found....");
-			}
-			catch (BookNotFoundException e) {
-				e.printStackTrace();
-			}
-		
+		try{
+			throw new BookNotFoundException("Book not Found....");
+		}
+		catch (BookNotFoundException e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 
@@ -85,12 +84,12 @@ public class BookStoreImpl implements BookStore {
 				return b;
 			}
 		}
-			try{
-				throw new BookNotFoundException("Book not Found....");
-			}
-			catch (BookNotFoundException e) {
-				e.printStackTrace();
-			}
+		try{
+			throw new BookNotFoundException("Book not Found....");
+		}
+		catch (BookNotFoundException e) {
+			e.printStackTrace();
+		}
 		
 		return null;
 	}
@@ -108,10 +107,10 @@ public class BookStoreImpl implements BookStore {
 			}
 		}
 		try{
-				throw new BookNotFoundException("Book not Found....");
+			throw new BookNotFoundException("Book not Found....");
 		}
 		catch (BookNotFoundException e) {
-				e.printStackTrace();
+			e.printStackTrace();
 		}
 		return null;
 	}
