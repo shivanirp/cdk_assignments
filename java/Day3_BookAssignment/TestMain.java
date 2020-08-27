@@ -40,7 +40,7 @@ public class TestMain {
 						if(b!=null)
 							System.out.println(b);
 						break;
-				case 3: System.out.println("Enter ISBN to update book name : ");
+				case 3: System.out.println("Enter ISBN to update book price : ");
 						isbn = Integer.parseInt(reader.readLine());
 						System.out.println("Enter new price : ");
 						price=Double.parseDouble(reader.readLine());
