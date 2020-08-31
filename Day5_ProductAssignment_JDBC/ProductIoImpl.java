@@ -6,11 +6,12 @@ import com.pojo.Product;
 
 public class ProductIoImpl implements ProductIo {
 
+	Scanner sc = new Scanner(System.in);
 	@Override
 	public Product getProduct() {
 		// TODO Auto-generated method stub
 		
-		Scanner sc = new Scanner(System.in);
+		
 		System.out.println("Enter product id : ");
 		int pId=sc.nextInt();
 		sc.nextLine();
@@ -24,7 +25,7 @@ public class ProductIoImpl implements ProductIo {
 		System.out.println("Enter category : ");
 		String category = sc.nextLine();
 		Product product=new Product(pId,pName,price,quantity,category);
-		sc.close();
+	
 		return product;
 		
 	}
