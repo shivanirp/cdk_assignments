@@ -28,8 +28,9 @@ public class ProductDAOImpl implements ProductDAO {
 			ps.setDouble(3, product.getPrice());
 			ps.setInt(4, product.getQuantity());
 			ps.setString(5, product.getCategory());
-			
-			return ps.executeUpdate();
+			int p=ps.executeUpdate();
+			con.close();
+			return p;
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -50,6 +51,7 @@ public class ProductDAOImpl implements ProductDAO {
 			ps.setDouble(1, price);
 			ps.setInt(2, productId);
 			int update=ps.executeUpdate();
+			con.close();
 			if(update>0)
 				return true;
 			else
@@ -74,6 +76,7 @@ public class ProductDAOImpl implements ProductDAO {
 			ps.setInt(1, quantity);
 			ps.setInt(2, productId);
 			int update=ps.executeUpdate();
+			con.close();
 			if(update>0)
 				return true;
 			else
@@ -108,6 +111,7 @@ public class ProductDAOImpl implements ProductDAO {
 				product.setQuantity(resultSet.getInt("quantity"));
 				product.setCategory(resultSet.getString("category"));
 			}
+			con.close();
 			if(product!=null)
 				return product;
 			else
@@ -143,6 +147,7 @@ public class ProductDAOImpl implements ProductDAO {
 				product.setCategory(resultSet.getString("category"));
 				products.add(product);
 			}
+			con.close();
 			return products;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -175,6 +180,7 @@ public class ProductDAOImpl implements ProductDAO {
 				product.setCategory(resultSet.getString("category"));
 				products.add(product);
 			}
+			con.close();
 			if(products!=null)
 				return products;
 			else
