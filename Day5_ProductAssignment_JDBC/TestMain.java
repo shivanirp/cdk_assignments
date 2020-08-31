@@ -69,7 +69,7 @@ public class TestMain {
 								System.out.println("Record not found..");
 							break;
 					case 5: System.out.println("Enter product category to find : ");
-							String category=s.nextLine();
+							String category=s.next();
 							products=daoImpl.findAllByCategory(category);
 							if(products!=null){
 								for(Product p : products)
