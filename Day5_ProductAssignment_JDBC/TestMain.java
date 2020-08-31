@@ -22,11 +22,10 @@ public class TestMain {
 		List<Product> products = new ArrayList<>();
 		int choice = 0;
 		int pId;
-		try
-		{
+		
 			do
 			{
-				
+				try{
 				System.out.println("\nMenu\n1. Add Product\n2. Update Price\n3. Update Quantity\n4. Find by Id\n5. Find by Category"
 						+ "\n6. Display All Products\n0. Exit\nEnter your choice : ");
 				
@@ -52,8 +51,6 @@ public class TestMain {
 							boolean b=daoImpl.updateProduct(pId, price);
 							if(b)
 								System.out.println("Updated successfully");
-							else
-								System.out.println("Record not found..");
 							break;
 					case 3: System.out.println("Enter product id to update quantity : ");
 							pId= s.nextInt();
@@ -62,8 +59,6 @@ public class TestMain {
 							boolean b1=daoImpl.updateProduct(pId, quantity);
 							if(b1)
 								System.out.println("Updated successfully");
-							else
-								System.out.println("Record not found..");
 							break;
 					case 4: System.out.println("Enter product id to find : ");
 							pId= s.nextInt();
@@ -74,7 +69,7 @@ public class TestMain {
 								System.out.println("Record not found..");
 							break;
 					case 5: System.out.println("Enter product category to find : ");
-							String category=s.next();
+							String category=s.nextLine();
 							products=daoImpl.findAllByCategory(category);
 							if(products!=null){
 								for(Product p : products)
@@ -92,13 +87,16 @@ public class TestMain {
 								System.out.println("No records found..");
 							break;
 					}
+				
+					} catch(Exception e)
+					{
+						e.printStackTrace();
+					}
 					
-			}while(choice!=0);
-		} catch(NoSuchElementException e)
-		{
-			e.printStackTrace();
-		}
-		s.close();
+
+			} while (choice != 0);
+		
+		
 	}
 
 }
